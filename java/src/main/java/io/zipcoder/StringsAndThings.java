@@ -52,7 +52,19 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        int isCount = 0;
+        int notCount = 0;
+
+        for (int i = 0; i < input.length(); i++) {
+            if (i + 1 < input.length() && input.charAt(i) == 'i' && input.charAt(i + 1) == 's') {
+                isCount++;
+            }
+            if (i + 2 < input.length() && input.charAt(i) == 'n' && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 't') {
+                notCount++;
+            }
+        }
+
+        return isCount == notCount;
     }
 
     /**
