@@ -17,6 +17,7 @@ public class StringsAndThings {
     public Integer countYZ(String input){
         int count = 0;
         String[] words = input.split(" ");
+
         for (String word : words) {
             word = word.toLowerCase();
             if (word.endsWith("y") || word.endsWith("z")) {
@@ -36,13 +37,11 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
+        return base.replace(remove, "");
         
-        
-        
-        
-        
-        return null;
     }
+        
+    
 
     /**
      * Given a string, return true if the number of appearances of "is" anywhere in the string is equal
