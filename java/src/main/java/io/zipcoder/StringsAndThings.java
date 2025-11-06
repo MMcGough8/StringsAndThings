@@ -75,7 +75,7 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        return input.contains("gg");
     }
 
 
@@ -87,6 +87,13 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int count = 0;
+        for (int i = 0; i < input.length() - 2; i++) {
+            char currentChar = input.charAt(i);
+            if (currentChar == input.charAt(i + 1) && currentChar == input.charAt(i + 2)) {
+                count++;
+            }
+        }
+        return count;
     }
 }
