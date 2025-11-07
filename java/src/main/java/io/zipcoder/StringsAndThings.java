@@ -74,10 +74,18 @@ public class StringsAndThings {
      *           gHappy("xxgxx") // Should return  false
      *           gHappy("xxggyygxx") // Should return  false
      */
-    public Boolean gIsHappy(String input){
-        return input.contains("gg");
+    public Boolean gIsHappy(String input) {
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == 'g') {
+                boolean leftHappy = (i > 0 && input.charAt(i - 1) == 'g');
+                boolean rightHappy = (i < input.length() - 1 && input.charAt(i + 1) == 'g');
+                if (leftHappy && rightHappy) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
-
 
     /**
      * We'll say that a "triple" in a string is a char appearing three times in a row.
@@ -97,3 +105,5 @@ public class StringsAndThings {
         return count;
     }
 }
+
+
